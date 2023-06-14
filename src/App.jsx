@@ -39,12 +39,18 @@ function App() {
         console.log(error);
       });
   };
+  
 
   return (
     <main>
-      <h1>Sensor de Temperatura</h1>
+      <h1>FriendlyPlant</h1>
+      
+  
+
+      
 
       <section>
+        
         {chats && chats.length
           ? chats.map((chat, index) => (
               <p key={index} className={chat.role === "user" ? "user_msg" : ""}>
@@ -57,6 +63,16 @@ function App() {
             ))
           : ""}
       </section>
+      <div class="container">
+    <div  class="chat-bubble ">
+
+      ¡Hola! El día de hoy seré tu asistente para saber más sobre tu planta, hazme una pregunta.
+    </div>
+  </div>
+
+
+<style src="./index.css" scoped></style>
+      
 
       <div className={isTyping ? "" : "hide"}>
         <p>
@@ -66,15 +82,19 @@ function App() {
 
       <form action="" onSubmit={(e) => chat(e, message)}>
         <input
+        
           type="text"
           name="message"
           value={message}
-          placeholder="Escriba un mensaje aquí y presione Entrar..."
+          placeholder="Escriba su pregunta y presione Enter..."
           onChange={(e) => setMessage(e.target.value)}
         />
       </form>
     </main>
+    
   );
+  
 }
+
 
 export default App;
